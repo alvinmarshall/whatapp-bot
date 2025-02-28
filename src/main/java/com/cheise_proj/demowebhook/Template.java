@@ -1,13 +1,19 @@
 package com.cheise_proj.demowebhook;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
-public record Template(
+import java.util.List;
+import java.util.Map;
 
-	@JsonProperty("name")
-	String name,
+@Builder
+record Template(
+        @JsonProperty("name")
+        String name,
 
-	@JsonProperty("language")
-	Language language
+        @JsonProperty("language")
+        Language language,
+        @JsonProperty("components")
+        List<Map<String, Object>> components
 ) {
 }

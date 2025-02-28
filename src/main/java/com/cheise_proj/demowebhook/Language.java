@@ -1,10 +1,11 @@
 package com.cheise_proj.demowebhook;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
-public record Language(
-
-	@JsonProperty("code")
-	String code
+@Builder
+record Language(
+        @JsonProperty("code")
+        String code
 ) {
 }

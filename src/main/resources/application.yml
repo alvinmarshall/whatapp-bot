@@ -1,1 +1,21 @@
-spring.application.name=demo-webhook
+spring:
+  application.name: whatsapp-webhook
+  cloud:
+    openfeign:
+      client:
+        default-config:
+          connect-timeout: 30000
+          readTimeout: 60000
+          loggerLevel: full
+
+whatsAppClient:
+  endpoint: https://graph.facebook.com/v21.0
+  phoneId: ${PHONE_ID:03030303}
+  verificationToken: ${VERIFICATION_TOKEN:-"set_in_your_env"}
+
+webhook:
+  verify_token: ${VERIFY_TOKEN:-57f909f0-614d-4715-b5d4-761cbc267859}
+
+logging:
+  level:
+    root: info
